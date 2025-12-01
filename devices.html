@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Manager - Forger Family Server</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="spy-theme">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark navbar-expand-lg spy-navbar sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand spy-logo fw-bold" href="index.html">
+                <i class="bi bi-shield-lock me-2"></i>Forger Family Server
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill me-2"></i>Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="files.html"><i class="bi bi-folder-fill me-2"></i>Files</a></li>
+                    <li class="nav-item"><a class="nav-link" href="media.html"><i class="bi bi-film me-2"></i>Media</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="devices.html"><i class="bi bi-phone me-2"></i>Devices</a></li>
+                    <li class="nav-item"><a class="nav-link" href="security.html"><i class="bi bi-shield-check me-2"></i>Security</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profiles.html"><i class="bi bi-person-fill me-2"></i>Profiles</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-3 ms-3">
+                <i class="bi bi-bell-fill cursor-pointer text-spy-green"></i>
+                <img src="https://api.placeholder.com/40/40?text=Loid" alt="Profile" class="rounded-circle profile-avatar">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid py-5 px-4">
+        <!-- Header Section -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h1 class="display-5 fw-bold text-white mb-2">
+                    <i class="bi bi-phone me-2 text-spy-green"></i><span class="text-spy-green">OPERATION:</span> Device Manager
+                </h1>
+                <p class="text-muted lead">Connected devices and their status</p>
+            </div>
+        </div>
+
+        <!-- Device Grid -->
+        <div class="row g-4 mb-5">
+            <!-- Loid's Laptop -->
+            <div class="col-lg-6">
+                <div class="device-card hover-lift">
+                    <div class="device-header">
+                        <i class="bi bi-laptop device-icon"></i>
+                        <div class="device-info">
+                            <h6>Loid's Laptop</h6>
+                            <div class="device-role">Admin • Home Office</div>
+                        </div>
+                    </div>
+                    <div class="device-status">
+                        <span class="status-dot"></span>Online
+                    </div>
+                    <div style="background: rgba(141, 169, 155, 0.1); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-size: 0.85rem;">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="text-muted">IP Address</div>
+                                <div class="text-white">192.168.1.100</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-muted">Model</div>
+                                <div class="text-white">Ultrabook Pro</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="device-actions">
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Loid Laptop', 'Activity Logged')">
+                            <i class="bi bi-graph-up"></i>View Activity
+                        </button>
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Loid Laptop', 'Bandwidth Limited')">
+                            <i class="bi bi-speedometer"></i>Limit Bandwidth
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yor's Tablet -->
+            <div class="col-lg-6">
+                <div class="device-card hover-lift">
+                    <div class="device-header">
+                        <i class="bi bi-tablet device-icon" style="color: var(--color-accent-pink);"></i>
+                        <div class="device-info">
+                            <h6>Yor's Tablet</h6>
+                            <div class="device-role">Admin • Kitchen</div>
+                        </div>
+                    </div>
+                    <div class="device-status">
+                        <span class="status-dot"></span>Online
+                    </div>
+                    <div style="background: rgba(141, 169, 155, 0.1); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-size: 0.85rem;">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="text-muted">IP Address</div>
+                                <div class="text-white">192.168.1.101</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-muted">Model</div>
+                                <div class="text-white">Tablet Max</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="device-actions">
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Yor Tablet', 'Activity Logged')">
+                            <i class="bi bi-graph-up"></i>View Activity
+                        </button>
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Yor Tablet', 'Bandwidth Limited')">
+                            <i class="bi bi-speedometer"></i>Limit Bandwidth
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anya's Device -->
+            <div class="col-lg-6">
+                <div class="device-card hover-lift">
+                    <div class="device-header">
+                        <i class="bi bi-phone device-icon" style="color: var(--color-accent-pink);"></i>
+                        <div class="device-info">
+                            <h6>Anya's Phone</h6>
+                            <div class="device-role">Child • School</div>
+                        </div>
+                    </div>
+                    <div class="device-status">
+                        <span class="status-dot"></span>Online
+                    </div>
+                    <div style="background: rgba(141, 169, 155, 0.1); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-size: 0.85rem;">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="text-muted">IP Address</div>
+                                <div class="text-white">192.168.1.102</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-muted">Model</div>
+                                <div class="text-white">Kids Phone</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="device-actions">
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Anya Phone', 'Activity Logged')">
+                            <i class="bi bi-graph-up"></i>View Activity
+                        </button>
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Anya Phone', 'Safe Mode Applied')">
+                            <i class="bi bi-shield-check"></i>Safe Mode
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart TV -->
+            <div class="col-lg-6">
+                <div class="device-card hover-lift">
+                    <div class="device-header">
+                        <i class="bi bi-tv device-icon"></i>
+                        <div class="device-info">
+                            <h6>Living Room TV</h6>
+                            <div class="device-role">Shared • Living Room</div>
+                        </div>
+                    </div>
+                    <div class="device-status">
+                        <span class="status-dot"></span>Online
+                    </div>
+                    <div style="background: rgba(141, 169, 155, 0.1); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-size: 0.85rem;">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="text-muted">IP Address</div>
+                                <div class="text-white">192.168.1.103</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-muted">Model</div>
+                                <div class="text-white">Smart TV 4K</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="device-actions">
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Smart TV', 'Activity Logged')">
+                            <i class="bi bi-graph-up"></i>View Activity
+                        </button>
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Smart TV', 'Bandwidth Limited')">
+                            <i class="bi bi-speedometer"></i>Limit Bandwidth
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guest Device -->
+            <div class="col-lg-6">
+                <div class="device-card hover-lift">
+                    <div class="device-header">
+                        <i class="bi bi-laptop device-icon" style="color: var(--color-muted);"></i>
+                        <div class="device-info">
+                            <h6>Guest Laptop</h6>
+                            <div class="device-role">Limited • Guest Network</div>
+                        </div>
+                    </div>
+                    <div class="device-status" style="background: rgba(155, 155, 155, 0.2);">
+                        <span class="status-dot" style="background: var(--color-muted);"></span>Offline
+                    </div>
+                    <div style="background: rgba(141, 169, 155, 0.1); border-radius: 8px; padding: 1rem; margin-bottom: 1rem; font-size: 0.85rem;">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="text-muted">IP Address</div>
+                                <div class="text-white">192.168.1.104</div>
+                            </div>
+                            <div class="col-6">
+                                <div class="text-muted">Last Seen</div>
+                                <div class="text-white">2 hours ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="device-actions">
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Guest Device', 'Activity Logged')">
+                            <i class="bi bi-graph-up"></i>View Activity
+                        </button>
+                        <button class="device-action-btn" onclick="updateDeviceStatus('Guest Device', 'Device Blocked')" style="color: var(--color-danger);">
+                            <i class="bi bi-ban"></i>Block Device
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Device Statistics -->
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="spy-card hover-lift">
+                    <div class="card-header-spy">
+                        <h5 class="mb-0"><i class="bi bi-bar-chart me-2 text-spy-green"></i>Connection Timeline</h5>
+                    </div>
+                    <div class="card-body-spy">
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-time">Now</div>
+                                <div class="activity-dot"></div>
+                                <div class="activity-content">
+                                    <div class="text-white">All devices stable</div>
+                                    <div class="text-muted small">Network status: Optimal</div>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-time">12:30</div>
+                                <div class="activity-dot"></div>
+                                <div class="activity-content">
+                                    <div class="text-white">Anya's Phone connected</div>
+                                    <div class="text-muted small">Safe Mode activated</div>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-time">10:15</div>
+                                <div class="activity-dot"></div>
+                                <div class="activity-content">
+                                    <div class="text-white">Yor's Tablet synced</div>
+                                    <div class="text-muted small">Files updated</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="spy-card hover-lift">
+                    <div class="card-header-spy">
+                        <h5 class="mb-0"><i class="bi bi-pie-chart me-2 text-spy-green"></i>Network Usage</h5>
+                    </div>
+                    <div class="card-body-spy">
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Bandwidth Usage</span>
+                                <span class="text-spy-green fw-bold">45%</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-spy-green" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Storage Usage</span>
+                                <span class="text-spy-green fw-bold">30%</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-spy-green" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>CPU Load</span>
+                                <span class="text-spy-green fw-bold">22%</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-spy-green" style="width: 22%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Easter Egg: Bond Icon -->
+    <button class="bond-easter-egg" onclick="showBondEasterEgg()">
+        <i class="bi bi-heart-fill"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

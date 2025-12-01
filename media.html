@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Server - Forger Family Server</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="spy-theme">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-dark navbar-expand-lg spy-navbar sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand spy-logo fw-bold" href="index.html">
+                <i class="bi bi-shield-lock me-2"></i>Forger Family Server
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-fill me-2"></i>Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="files.html"><i class="bi bi-folder-fill me-2"></i>Files</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="media.html"><i class="bi bi-film me-2"></i>Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="devices.html"><i class="bi bi-phone me-2"></i>Devices</a></li>
+                    <li class="nav-item"><a class="nav-link" href="security.html"><i class="bi bi-shield-check me-2"></i>Security</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profiles.html"><i class="bi bi-person-fill me-2"></i>Profiles</a></li>
+                </ul>
+            </div>
+            <div class="d-flex align-items-center gap-3 ms-3">
+                <i class="bi bi-bell-fill cursor-pointer text-spy-green"></i>
+                <img src="https://api.placeholder.com/40/40?text=Loid" alt="Profile" class="rounded-circle profile-avatar">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid py-5 px-4">
+        <!-- Header Section -->
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <h1 class="display-5 fw-bold text-white mb-4">
+                    <i class="bi bi-film me-2 text-spy-green"></i><span class="text-spy-green">OPERATION:</span> Media Library
+                </h1>
+                
+                <!-- Filter Buttons -->
+                <div class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-outline-spy-green active" onclick="filterMedia('all')">All</button>
+                    <button class="btn btn-outline-spy-green" onclick="filterMedia('movies')">Movies</button>
+                    <button class="btn btn-outline-spy-green" onclick="filterMedia('shows')">Shows</button>
+                    <button class="btn btn-outline-spy-green" onclick="filterMedia('music')">Music</button>
+                    <button class="btn btn-outline-spy-green" onclick="filterMedia('kids')">Kids</button>
+                    <button class="btn btn-outline-spy-green" onclick="filterMedia('family')">Family</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Media Grid -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-12">
+                <div class="media-grid">
+                    <div class="media-item" onclick="playMedia('The Spy\'s Mission')">
+                        <div style="background: linear-gradient(135deg, #8da99b 0%, #57675c 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-play-circle" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="media-overlay">
+                            <div class="media-title">The Spy's Mission</div>
+                            <div class="media-type">Spy Thriller • 2h 14m</div>
+                        </div>
+                    </div>
+
+                    <div class="media-item" onclick="playMedia('Family Bonds')">
+                        <div style="background: linear-gradient(135deg, #fab3ad 0%, #ffb6c1 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-play-circle" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="media-overlay">
+                            <div class="media-title">Family Bonds</div>
+                            <div class="media-type">Drama • 1h 48m</div>
+                        </div>
+                    </div>
+
+                    <div class="media-item" onclick="playMedia('Operation: Dinner')">
+                        <div style="background: linear-gradient(135deg, #2c2827 0%, #57675c 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-play-circle" style="font-size: 3rem; color: var(--color-spy-green);"></i>
+                        </div>
+                        <div class="media-overlay">
+                            <div class="media-title">Operation: Dinner</div>
+                            <div class="media-type">Comedy • 1h 32m</div>
+                        </div>
+                    </div>
+
+                    <div class="media-item" onclick="playMedia('Waku Waku Adventure')">
+                        <div style="background: linear-gradient(135deg, #FFB6C1 0%, #FFD700 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-play-circle" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="media-overlay">
+                            <div class="media-title">Waku Waku Adventure</div>
+                            <div class="media-type">Kids Show • 24m</div>
+                        </div>
+                    </div>
+
+                    <div class="media-item" onclick="playMedia('Jazz Sessions')">
+                        <div style="background: linear-gradient(135deg, #57675c 0%, #8da99b 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-music-note-beamed" style="font-size: 3rem; color: var(--color-spy-green);"></i>
+                        </div>
+                        <div class="media-overlay">
+                            <div class="media-title">Jazz Sessions</div>
+                            <div class="media-type">Music Concert • 1h 45m</div>
+                        </div>
+                    </div>
+
+                    <div class="media-item" onclick="playMedia('Documentary: Spy Craft')">
+                        <div style="background: linear-gradient(135deg, #2c2827 0%, #1a1a1a 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-play-circle" style="font-size: 3rem; color: var(--color-spy-green);"></i>
+                        </div>
+                        <div class="media-overlay">
+                            <div class="media-title">Documentary: Spy Craft</div>
+                            <div class="media-type">Documentary • 2h 30m</div>
+                        </div>
+                    </div>
+
+                    <div class="media-item" onclick="playMedia('Cooking with Yor')">
+                        <div style="background: linear-gradient(135deg, #fab3ad 0%, #ff9999 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-play-circle" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="media-overlay">
+                            <div class="media-title">Cooking with Yor</div>
+                            <div class="media-type">Cooking Show • 32m</div>
+                        </div>
+                    </div>
+
+                    <div class="media-item" onclick="playMedia('Night at the Opera')">
+                        <div style="background: linear-gradient(135deg, #00E676 0%, #8da99b 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-play-circle" style="font-size: 3rem; color: white;"></i>
+                        </div>
+                        <div class="media-overlay">
+                            <div class="media-title">Night at the Opera</div>
+                            <div class="media-type">Musical • 2h 5m</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anya's Safe Zone Section -->
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <div class="spy-card hover-lift">
+                    <div class="card-header-spy">
+                        <h5 class="mb-0"><i class="bi bi-shield-check me-2 text-accent-pink"></i>Anya's Waku Waku Zone</h5>
+                    </div>
+                    <div class="card-body-spy" style="background: rgba(250, 179, 173, 0.08);">
+                        <div class="row g-3">
+                            <div class="col-md-4 text-center">
+                                <div style="background: rgba(250, 179, 173, 0.2); border-radius: 20px; padding: 2rem; margin-bottom: 1rem;">
+                                    <i class="bi bi-heart-fill" style="font-size: 2.5rem; color: var(--color-accent-pink); display: block; margin-bottom: 10px;"></i>
+                                    <button class="anya-btn" onclick="playMedia('Waku Waku Adventure')">Play Now!</button>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <h6 class="text-white mb-3">Safe Mode Features:</h6>
+                                <ul class="text-muted small">
+                                    <li class="mb-2"><i class="bi bi-check-circle text-accent-pink me-2"></i>Age-appropriate content only</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-accent-pink me-2"></i>Limited access to 2 hours per day</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-accent-pink me-2"></i>Parental controls enabled</li>
+                                    <li class="mb-2"><i class="bi bi-check-circle text-accent-pink me-2"></i>Cute notifications from Anya!</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Easter Egg: Bond Icon -->
+    <button class="bond-easter-egg" onclick="showBondEasterEgg()">
+        <i class="bi bi-heart-fill"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function filterMedia(type) {
+            console.log("[v0] Filtering media by type: " + type);
+            showMissionToast(`Filtering media: ${type}`);
+        }
+    </script>
+</body>
+</html>
